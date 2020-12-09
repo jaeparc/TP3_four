@@ -7,36 +7,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body>
+<body style="background-image: url('images/background.jpg');background-attachment: fixed;background-position: center center;">
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <div class="container">
-        <div class="row">
-            <form>
-                <div class="row" style="margin-top:25%;">
-                    <div class="input-field col s4 offset-s2">
-                        <input  id="first_name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
+    <div class="white container z-depth-3" style="margin-top:2%;margin-bottom:2%;padding-top : 2%; padding-bottom : 2%;">
+        <div class="container">
+            <h1 class="center-align"><b>ContrOven</b></h1>
+            <div class="row" id="login">
+                <h5 class="center-align"><i>Se connecter</i></h5>
+                <form method="POST" action="">
+                    <div class="row" style="margin-top:5%;">
+                        <div class="input-field col s8 offset-s2">
+                            <input id="emailLogin" type="text" class="validate">
+                            <label for="emailLogin">Adresse mail</label>
+                        </div>
                     </div>
-                    <div class="input-field col s4">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
+                    <div class="row">
+                        <div class="input-field col s8 offset-s2">
+                            <input id="passwordLogin" type="password" class="validate">
+                            <label for="passwordLogin">Mot de passe</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Password</label>
+                    <div class="row">
+                        <a href="#" onclick="displaySignin()">S'inscrire</a>
+                        <div class="right-align">
+                            <button class="btn waves-effect waves-light" type="submit" name="subLogin">Se connecter
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s8 offset-s2">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
+                </form>
+            </div>
+            <div class="row" id="signin" style="display:none;">
+                <h5 class="center-align"><i>S'inscrire</i></h5>
+                <form method="POST" action="">
+                    <div class="row" style="margin-top:5%;">
+                        <div class="input-field col s8 offset-s2">
+                            <input id="emailSignin" type="text" class="validate">
+                            <label for="emailSignin">Adresse mail</label>
+                        </div>
                     </div>
-                </div>
-            </form>
+                    <div class="row">
+                        <div class="input-field col s8 offset-s2">
+                            <input id="passwordSignin" type="password" class="validate">
+                            <label for="passwordSignin">Mot de passe</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4 offset-s2">
+                            <input id="first_name" type="text" class="validate">
+                            <label for="first_name">Prénom</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Nom</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <a href="#" onclick="displayLogin()">Se connecter</a>
+                        <div class="right-align">
+                            <button class="btn waves-effect waves-light" type="submit" name="subSignin">S'inscrire
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body>
 
 </html>
+
+<script type="text/javascript">
+    function displaySignin() {
+        var formSignin = document.getElementById("signin");
+        var formLogin = document.getElementById("login");
+        formSignin.style.display = "block";
+        formLogin.style.display = "none";
+    }
+
+    function displayLogin() {
+        var formSignin = document.getElementById("signin");
+        var formLogin = document.getElementById("login");
+        formSignin.style.display = "none";
+        formLogin.style.display = "block";
+    }
+</script>
