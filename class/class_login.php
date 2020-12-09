@@ -20,10 +20,12 @@ class login
                 $reqUser = $this->_bdd->prepare("SELECT * FROM user WHERE login = ? AND mdp = ?");
                 $reqUser->execute(array($this->_mail, $this->_password));
                 $userExist = $reqUser->rowCount();
+                $userInfo = $reqUser->fetch();
                 if ($userExist != 0) {
                     return "<h6 class='green-text'><i>Connecté</i></h6>";
                     session_start();
                     $_SESSION['logged'] = true;
+                    $_SESSION['id_logged'] = $userInfo['id'];
                     header('Location:control.php');
                 }else{
                     return "<h6 class='red-text'><i>Mail ou mot de passe incorrect</i></h6>";

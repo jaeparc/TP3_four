@@ -1,4 +1,3 @@
-
 <?php
     session_start();
     require('class/class_login.php');
@@ -10,6 +9,8 @@
         $signinDisplay = false;
     }
     if(isset($_POST['subSignin'])){
+        $signin = new signin($_POST['emailSignin'],$_POST['passwordSignin'],$_POST['last_name'],$_POST['first_name'],$bdd);
+        $messageSignin = $signin->signUser();
         $signinDisplay = true;
     }
 ?>
