@@ -78,6 +78,15 @@
 
 </html>
 
+<?php
+    require('class/class_login.php');
+    require('class/bdd.php');
+    if(isset($_POST['subLogin'])){
+        $login = new login($_POST['mailLogin'],$_POST['passwordLogin'],$bdd);
+        $login->verifUser();
+    }
+?>
+
 <script type="text/javascript">
     function displaySignin() {
         var formSignin = document.getElementById("signin");
