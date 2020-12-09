@@ -9,24 +9,32 @@ class login
     public function __construct($mail, $password, $bdd)
     {
         $this->_mail = $mail;
-        $this->_password;
-        $this->_bdd;
+        $this->_password = $password;
+        $this->_bdd = $bdd;
     }
 
     public function verifUser()
     {
         if (!empty($this->_password) && !empty($this->_mail)) {
-            $reqUser = $this->_bdd->prepare("SELECT * FROM user WHERE login = ? AND password = ?");
-            $reqUser->execute(array($this->_mail, $this->_password));
-            $userExist = $reqUser->rowCount();
-            if ($userExist == 1) {
-                return 1;
-                session_start();
-                $_SESSION['logged'] = true;
-                header('Location:control.php');
-            }else{
-                return "Mail ou mot de passe incorrect";
+            if(filter_var($this->_mail, FILTER_VALIDATE_EMAIL)){
+                $reqUser = $this->_bdd->prepare("SELECT * FROM user WHERE login = ? AND mdp = ?");
+                $reqUser->execute(array($this->_mail, $this->_password));
+                $userExist = $reqUser->rowCount();
+                if ($userExist != 0) {
+                    return "<h6 class='green-text'><i>Connecté</i></h6>";
+                    session_start();
+                    $_SESSION['logged'] = true;
+                    header('Location:control.php');
+                }else{
+                    return "<h6 class='red-text'><i>Mail ou mot de passe incorrect</i></h6>";
+                }
+            }   
+            else{
+                return "<h6 class='red-text'><i>Adresse mail non valide</i></h6>";
             }
+        }
+        else{
+            return "<h6 class='red-text'><i>Un des champs est vide</i></h6>";
         }
     }
 }
