@@ -22,6 +22,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/four_allumé.png" />
+    <title>Accueil - ContrOven</title>
 </head>
 
 <body style="background-image: url('images/background.jpg');background-attachment: fixed;background-position: center center;">
@@ -29,7 +31,7 @@
     <div class="white container z-depth-3" style="margin-top:2%;margin-bottom:2%;padding-top : 2%; padding-bottom : 2%;">
         <div class="container">
             <h1 class="center-align"><b>ContrOven</b></h1>
-            <?php if($signinDisplay != true){
+            <?php if(!isset($signinDisplay) || $signinDisplay != true){
                 echo "<div class='row' id='login'>";
             }
             else{
@@ -64,7 +66,7 @@
                     </div>
                 </form>
             </div>
-            <?php if($signinDisplay == true){
+            <?php if(isset($signinDisplay) && $signinDisplay == true){
                 echo "<div class='row' id='signin'>";
             }
             else{

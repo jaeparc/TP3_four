@@ -22,11 +22,12 @@ class login
                 $userExist = $reqUser->rowCount();
                 $userInfo = $reqUser->fetch();
                 if ($userExist != 0) {
-                    return "<h6 class='green-text'><i>Connecté</i></h6>";
                     session_start();
                     $_SESSION['logged'] = true;
                     $_SESSION['id_logged'] = $userInfo['id'];
-                    header('Location:control.php');
+                    $_SESSION['rights'] = $userInfo['admin'];
+                    header('Location:gestion.php');
+                    return "<h6 class='green-text'><i>Connecté ".$_SESSION['id_logged']."</i></h6>";
                 }else{
                     return "<h6 class='red-text'><i>Mail ou mot de passe incorrect</i></h6>";
                 }
