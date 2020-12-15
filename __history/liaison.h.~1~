@@ -1,0 +1,35 @@
+//---------------------------------------------------------------------------
+
+#ifndef liaisonH
+#define liaisonH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <IdBaseComponent.hpp>
+#include <IdComponent.hpp>
+#include <IdCustomTCPServer.hpp>
+#include <IdTCPServer.hpp>
+#include <IdContext.hpp>
+//---------------------------------------------------------------------------
+class TForm1 : public TForm
+{
+__published:	// Composants gérés par l'EDI
+	TButton *Active;
+	TButton *Eteindre;
+	TIdTCPServer *IdTCPServer1;
+	TMemo *Memo1;
+	TLabel *Label1;
+	void __fastcall ActiveClick(TObject *Sender);
+	void __fastcall IdTCPServer1AfterBind(TObject *Sender);
+	void __fastcall EteindreClick(TObject *Sender);
+	void __fastcall IdTCPServer1Execute(TIdContext *AContext);
+private:	// Déclarations utilisateur
+public:		// Déclarations utilisateur
+	__fastcall TForm1(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TForm1 *Form1;
+//---------------------------------------------------------------------------
+#endif

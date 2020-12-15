@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/09/30 10:47:02.000.489,=C:\Users\Lecouflet\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+    <Transaction>2020/09/30 10:47:03.000.292,=C:\Users\Lecouflet\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
+    <Transaction>2020/12/15 11:49:03.000.680,=C:\Users\Lecouflet\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+    <Transaction>2020/12/15 11:49:03.000.665,=C:\Users\Lecouflet\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
+    <Transaction>2020/12/15 11:53:34.000.386,C:\Users\Lecouflet\Documents\Embarcadero\Studio\Projets\Unit1.h=C:\Users\Lecouflet\Desktop\TP3_four\test\test c++\liaison.h</Transaction>
+    <Transaction>2020/12/15 11:53:34.000.386,C:\Users\Lecouflet\Documents\Embarcadero\Studio\Projets\Unit1.dfm=C:\Users\Lecouflet\Desktop\TP3_four\test\test c++\liaison.dfm</Transaction>
+    <Transaction>2020/12/15 11:53:34.000.386,C:\Users\Lecouflet\Documents\Embarcadero\Studio\Projets\Unit1.cpp=C:\Users\Lecouflet\Desktop\TP3_four\test\test c++\liaison.cpp</Transaction>
+    <Transaction>2020/12/15 11:53:35.000.801,C:\Users\Lecouflet\Documents\Embarcadero\Studio\Projets\Project1PCH1.h=C:\Users\Lecouflet\Desktop\TP3_four\test\test c++\Project1PCH1.h</Transaction>
+    <Transaction>2020/12/15 11:53:36.000.625,C:\Users\Lecouflet\Documents\Embarcadero\Studio\Projets\Project1.cbproj=C:\Users\Lecouflet\Desktop\TP3_four\test\test c++\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
