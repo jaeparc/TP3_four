@@ -16,7 +16,7 @@ class modif{
     public function modif($mail,$mdp,$prenom,$nom){
         if (!empty($mail) && !empty($mdp) && !empty($prenom) && !empty($nom)) {
             if(filter_var($mail, FILTER_VALIDATE_EMAIL)){
-                $reqUser = $this->_bdd->query("UPDATE user SET `login` = ".$mail.", `mdp` = ".$mdp.", `prenom` = ".$prenom.", `nom` = ".$nom." WHERE `id` = ".$this->_id);
+                $reqUser = $this->_bdd->query("UPDATE user SET `login` = '".$mail."', `mdp` = '".$mdp."', `prenom` = '".$prenom."', `nom` = '".$nom."' WHERE `id` = ".$this->_id);
                 $_SESSION['idUserModify'] = "";
                 header('Location:admin.php');
             }else{

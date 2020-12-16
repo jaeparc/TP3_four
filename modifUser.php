@@ -60,7 +60,7 @@
                         <div class="col s8 offset-s2">
                             <label>Droits</label>
                             <select class="browser-default">
-                                <?php if($userInfo['admin'] = 0){
+                                <?php if($userInfo['admin'] == 0){
                                     echo "<option value='0' selected>Utilisateur</option>
                                     <option value='1'>Administrateur</option>";
                                 }else{
