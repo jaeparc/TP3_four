@@ -11,13 +11,13 @@ class gestion
         $userInfo = $reqUser->fetch();
     }
 
-    public function getUserData(){
+    public function getUserData(){ //Fonction retournant les données de l'utilisateur connecté
         $reqUser = $this->_bdd->query("SELECT * FROM user WHERE id = ".$this->_id);
         $userInfo = $reqUser->fetch();
         return $userInfo;
     }
 
-    public function logout(){
+    public function logout(){ //Fonction déconnectant l'utilisateur connecté
         session_destroy();
         header('Location:index.php');
     }

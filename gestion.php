@@ -2,13 +2,13 @@
 session_start();
 require('class/class_gestion.php');
 require('class/bdd.php');
-if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
+if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) { //Test si l'utilisateur est connecté
     $gestion = new gestion($_SESSION['id_logged'], $bdd);
     $userInfo = $gestion->getUserData();
-    if (isset($_POST['logout'])) {
+    if (isset($_POST['logout'])) { //Actions à réaliser si l'utilisateur a cliquer sur le bouton "Déconnexion"
         $gestion->logout();
     }
-    if (isset($_POST['subTemp'])) {
+    if (isset($_POST['subTemp']) && isset($_POST['temperatureDesired'])) { //Actions à réaliser si l'utilisateur vient de rentrer une température pour le four
     }
 }
 ?>
@@ -31,7 +31,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
     <div class="white container z-depth-3" style="margin-top:2%;margin-bottom:2%;padding-top : 2%; padding-bottom : 2%;">
         <div class="container">
             <h1 class="center-align"><b>ContrOven</b></h1>
-            <?php if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) { ?>
+            <?php if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) { //Affichage de la page si l'utilisateur est connecté ?>
                 <div class="row">
                     <?php echo '<h5 class="center-align"><i>Bienvenue ' . $userInfo['nom'] . ' ' . $userInfo['prenom'] . '</i></h5>' ?>
                     <div class="row">
@@ -48,7 +48,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
                     <div class="row">
                         <form method="POST" action="">
                             <div class="input-field col s4 offset-s2">
-                                <input type="text" id="temperatureDesired" class="validate">
+                                <input type="text" id="temperatureDesired" name="temperatureDesired" class="validate">
                                 <label for="temperatureDesired">Température désirée (°C)</label>
                             </div>
                             <div class="input-field col s4">
@@ -66,7 +66,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
                                 <button type="submit" class="btn waves-effect waves-light" name="logout">Déconnexion</button>
                             </form>
                         </div>
-                        <?php if ($userInfo['admin'] == 1) {
+                        <?php if ($userInfo['admin'] == 1) { //Affichage du bouton donnant accès à la page d'admin si l'utilisateur est connecté en tant qu'admin
                             echo "
                             <div class='col s6 center-align'>
                                 <a href='admin.php'>
@@ -76,7 +76,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
                         } ?>
                     </div>
                 </div>
-            <?php } else {
+            <?php } else { //Affichage d'un message indiquant que l'utilisateur n'a pas le droit d'être sur cette page
                 echo "<h1 class='center-align'><b>Vous avez l'air perdu...</b></h1>";
                 echo "<a href='index.php' class='center-align'>Retour à l'accueil</a>";
             } ?>
@@ -87,7 +87,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
 </html>
 
 <script type="text/javascript">
-    function refreshTemp() {
+    function refreshTemp() { //Actualise la température du four
         fetch("api/refreshTemp.php").then((resp) => resp.json())
             .then(function(data) {
                 updateTemp(data);
@@ -95,7 +95,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
             })
     }
 
-    function updateTemp(temperature) {
+    function updateTemp(temperature) { //Actualise l'affichage de la température du four ainsi que la photo du four
         var divTemperature = document.getElementById('temperatureActuelle');
         divTemperature.innerHTML = "<b>" + temperature + "°C</b>";
         if (temperature > 0) {
@@ -104,13 +104,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
         }
     }
 
-    function compteur(valeur) {
-        /*var gauge = new RGraph.Gauge({
-            id: 'cvs',
-            min: 0,
-            max: 70,
-            value: valeur
-        }).draw();*/
+    function compteur(valeur) { //Affiche le thermomètre
         var thermometer = new RGraph.Thermometer({
             id: 'cvs',
             min: 0,
@@ -121,5 +115,5 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
 
     updateTemp(0);
     compteur(0);
-    setInterval(refreshTemp, 500);
+    setInterval(refreshTemp, 500); //Actualise la température toutes les 5 secondes
 </script>

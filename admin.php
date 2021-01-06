@@ -2,14 +2,14 @@
     session_start();
     require('class/class_admin.php');
     require('class/bdd.php');
-    if(isset($_SESSION['logged']) && $_SESSION['logged'] == true && $_SESSION['rights'] == 1){
+    if(isset($_SESSION['logged']) && $_SESSION['logged'] == true && $_SESSION['rights'] == 1){ //Test si l'utilisateur a bien les droits pour être sur cette page
         $admin = new admin($bdd);
         $usersInfo = $admin->getUsersData();
         for($j = 0; $j < sizeof($usersInfo); $j++){
-            if(isset($_POST[$j])){
+            if(isset($_POST[$j])){ //Supprime l'utilisateur correspondant au bouton sur lequel l'utilisateur vient d'appuyer
                 $admin->deleteUser($usersInfo[$j]['id']);
             }
-            if(isset($_POST['modify'.$j])){
+            if(isset($_POST['modify'.$j])){ //Redirige vers la page de modification de l'utilisateur correspondant au bouton sur lequel l'utilisateur vient d'appuyer
                 $_SESSION['idUserModify'] = $usersInfo[$j]['id'];
                 header('Location:modifUser.php');
             }
@@ -47,7 +47,7 @@
                         </thead>
 
                         <tbody>
-                            <?php for($i = 0; $i < sizeof($usersInfo); $i++){
+                            <?php for($i = 0; $i < sizeof($usersInfo); $i++){ //Remplissage du tableau avec tous les utilisateurs inscrits sur le site
                                 echo "<tr>
                                     <td>".$usersInfo[$i]['nom']."</td>
                                     <td>".$usersInfo[$i]['prenom']."</td>";
@@ -72,7 +72,7 @@
                         </tbody>
                     </table>
                 </div>
-                <?php }else{
+                <?php }else{ //Affichage d'un message indiquant que l'utilisateur n'a pas le droit d'être sur cette page
                     echo "<h1 class='center-align'><b>Vous avez l'air perdu...</b></h1>";
                     if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
                         echo "<a href='gestion.php' class='center-align'>Retour à l'accueil</a>";

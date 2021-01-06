@@ -5,7 +5,7 @@
         {
             $this->_bdd = $bdd;
         }
-        public function getUsersData(){
+        public function getUsersData(){ //Fonction retournant les données de tous les utilisateurs
             $reqUser = $this->_bdd->query("SELECT * FROM user");
             $i = 0;
             while($userInfo = $reqUser->fetch()){
@@ -17,7 +17,8 @@
             }
             return $usersData;
         }
-        public function deleteUser($id){
+        
+        public function deleteUser($id){ //Fonction supprimant l'utilisateur sélectionné
             $reqUser = $this->_bdd->query("DELETE FROM user WHERE id = ".$id);
         }
     }

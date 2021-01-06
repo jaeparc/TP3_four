@@ -3,12 +3,12 @@
     require('class/class_login.php');
     require('class/class_signin.php');
     require('class/bdd.php');
-    if(isset($_POST['subLogin'])){
+    if(isset($_POST['subLogin'])){ //Actions quand l'utilisateur soumet le formulaire de connexion
         $login = new login($_POST['emailLogin'],$_POST['passwordLogin'],$bdd);
         $messageLogin = $login->verifUser();
         $signinDisplay = false;
     }
-    if(isset($_POST['subSignin'])){
+    if(isset($_POST['subSignin'])){ //Actions quand l'utilisateur soumet le formulaire d'inscription
         $signin = new signin($_POST['emailSignin'],$_POST['passwordSignin'],$_POST['last_name'],$_POST['first_name'],$bdd);
         $messageSignin = $signin->signUser();
         $signinDisplay = true;
@@ -31,10 +31,10 @@
     <div class="white container z-depth-3" style="margin-top:2%;margin-bottom:2%;padding-top : 2%; padding-bottom : 2%;">
         <div class="container">
             <h1 class="center-align"><b>ContrOven</b></h1>
-            <?php if(!isset($signinDisplay) || $signinDisplay != true){
+            <?php if(!isset($signinDisplay) || $signinDisplay != true){ //Si l'utilisateur ne vient pas de soumettre de formulaire d'inscription
                 echo "<div class='row' id='login'>";
             }
-            else{
+            else{ //Si l'utilisateur vient de soumettre un formulaire d'inscription
                 echo "<div class='row' id='login' style='display:none'>";
             }
             ?>
@@ -42,7 +42,7 @@
                 <form method="POST" action="">
                     <div class="row" style="margin-top:5%;">
                         <?php 
-                        if(isset($messageLogin)){
+                        if(isset($messageLogin)){ //Affichage d'un message d'erreur pour le formulaire de connexion si erreur il y a
                             echo $messageLogin;
                         } ?>
                         <div class="input-field col s8 offset-s2">
@@ -66,10 +66,10 @@
                     </div>
                 </form>
             </div>
-            <?php if(isset($signinDisplay) && $signinDisplay == true){
+            <?php if(isset($signinDisplay) && $signinDisplay == true){ //Si l'utilisateur vient de soumettre un formulaire d'inscription
                 echo "<div class='row' id='signin'>";
             }
-            else{
+            else{ //Si l'utilisateur ne vient pas de soumettre un formulaire d'inscription
                 echo "<div class='row' id='signin' style='display:none'>";
             }
             ?>
@@ -77,7 +77,7 @@
                 <form method="POST" action="">
                     <div class="row" style="margin-top:5%;">
                         <?php 
-                        if(isset($messageSignin)){
+                        if(isset($messageSignin)){ //Affichage d'un message d'erreur pour le formulaire d'inscription si erreur il y a
                             echo $messageSignin;
                         } ?>
                         <div class="input-field col s8 offset-s2">
@@ -119,14 +119,14 @@
 
 
 <script type="text/javascript">
-    function displaySignin() {
+    function displaySignin() { //Fonction permettant l'affichage du formulaire d'inscription
         var formSignin = document.getElementById("signin");
         var formLogin = document.getElementById("login");
         formSignin.style.display = "block";
         formLogin.style.display = "none";
     }
 
-    function displayLogin() {
+    function displayLogin() { //Fonction permettant l'affichage du formulaire de connexion
         var formSignin = document.getElementById("signin");
         var formLogin = document.getElementById("login");
         formSignin.style.display = "none";
