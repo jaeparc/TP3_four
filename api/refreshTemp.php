@@ -1,4 +1,4 @@
 <?php
-    $temperature = rand(0,70);
+    $temperature = rand(50,70);
     echo json_encode($temperature);
 ?>

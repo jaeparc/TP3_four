@@ -20,7 +20,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="compteur/RGraph.common.core.js"></script>
-    <script src="compteur/RGraph.gauge.js"></script>
+    <script src="compteur/RGraph.thermometer.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="jquery-3.5.1.min.js"></script>
     <link rel="icon" type="image/png" href="images/four_allumé.png" />
@@ -39,7 +39,9 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
                             <img class="responsive-img" style="display:block;margin-top:5%;margin-left: auto;margin-right: auto;" id="fourImg" src="images/four_eteint.png">
                         </div>
                         <div class="col s6">
-                            <canvas id="cvs" width="250" height="250">[No canvas support]</canvas>
+                            <div class="center-align">
+                                <canvas id="cvs" width="75" height="300">[No canvas support]</canvas>
+                            </div>
                         </div>
                     </div>
                     <h4 class="center-align" id="temperatureActuelle"></h4>
@@ -103,7 +105,13 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
     }
 
     function compteur(valeur) {
-        var gauge = new RGraph.Gauge({
+        /*var gauge = new RGraph.Gauge({
+            id: 'cvs',
+            min: 0,
+            max: 70,
+            value: valeur
+        }).draw();*/
+        var thermometer = new RGraph.Thermometer({
             id: 'cvs',
             min: 0,
             max: 70,
@@ -113,5 +121,5 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
 
     updateTemp(0);
     compteur(0);
-    setInterval(refreshTemp, 1000);
+    setInterval(refreshTemp, 500);
 </script>
