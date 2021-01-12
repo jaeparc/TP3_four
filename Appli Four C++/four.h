@@ -14,10 +14,10 @@ class four{
 	public:
 
 	four();
-	~four();
-	double tension;
-	int	Lecture();
-	void Ecriture(float tension);
+	~four(); // libération du four
+	double tension;  // tension V
+	int	Lecture(); // lire tension + conversion
+	void Ecriture(float tension);  // Ecriture une tension
 };
 
 

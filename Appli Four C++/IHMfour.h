@@ -41,9 +41,10 @@ __published:	// Composants gérés par l'EDI
 private:
 
 	four *FOUR;
-	float temperature;
-	float Tcom;
-	int volt;	// Déclarations utilisateur
+	float temperature; // consigne
+	float Tcom; // température relevée du four
+	int volt; // puissance du four
+
 
 public:		// Déclarations utilisateur
 
