@@ -59,8 +59,9 @@ void __fastcall TForm1::BtnArretClick(TObject *Sender)
 
 void __fastcall TForm1::BtnStartClick(TObject *Sender)
 {
-    Timer2->Enabled=true;
+	Timer2->Enabled=true;
 	Tcom = EditTemp->Text.ToInt(); //ecriture du pourcentage en V
+
 }
 //---------------------------------------------------------------------------
 

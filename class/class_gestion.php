@@ -21,5 +21,19 @@ class gestion
         session_destroy();
         header('Location:index.php');
     }
+
+    public function submitTemp($temp){
+        $adress = '192.168.65.25';
+        $port = '203';
+        $buf = $temp;
+
+        $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+
+        socket_connect($socket, $adress, $port);
+
+        socket_send($socket, $buf, 6, 0);
+
+        socket_close($socket);
+    }
 }
 ?>

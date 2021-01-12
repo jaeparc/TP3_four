@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\test"
   ],
-  "SelectedNode": "\\index.php",
+  "SelectedNode": "\\gestion.php",
   "PreviewInSolutionExplorer": false
 }

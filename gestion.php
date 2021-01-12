@@ -9,6 +9,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) { //Test si l'uti
         $gestion->logout();
     }
     if (isset($_POST['subTemp']) && isset($_POST['temperatureDesired'])) { //Actions à réaliser si l'utilisateur vient de rentrer une température pour le four
+        $gestion->submitTemp($_POST['temperatureDesired']);
     }
 }
 ?>
@@ -86,9 +87,14 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) { //Test si l'uti
 
 </html>
 
+<?php
+
+?>
+
 <script type="text/javascript">
+
     function refreshTemp() { //Actualise la température du four
-        fetch("api/refreshTemp.php").then((resp) => resp.json())
+        fetch("api/refreshTemp.php?var=<?php echo 'test'?>").then((resp) => resp.json())
             .then(function(data) {
                 updateTemp(data);
                 compteur(data);

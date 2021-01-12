@@ -1,0 +1,50 @@
+#pragma hdrstop
+#pragma argsused
+
+#ifdef _WIN32
+#include <tchar.h>
+#else
+  typedef char _TCHAR;
+  #define _tmain main
+#endif
+
+#include <stdio.h>
+#include "TCPserver.h"
+
+int main()
+{
+	TCPserver *TCPs = new TCPserver();
+	bool TCPser = TCPs->TCPconnexion(203);
+	char buf[60] = {0};
+	bool TCPclie = TCPc->TCPconnexion("192.168.65.25", 1234);
+	do
+	{
+		TCPser = TCPs->TCPConnexionContinu();
+		if (TCPser == true) {
+			int i;
+			do
+			{
+
+			if (TCPclie == true) {
+				if (TCPs->TCPrecv(buf, 4)) {
+					std::cout << buf << std::endl;
+					ParseTest(buf, strlen(buf), TCPc);
+					i = 1;
+				}
+				else {
+					i = 0;
+				}
+			}
+			else {
+				std::cout << "Client Non conneter reconnexion en cours !" << std::endl;
+				TCPclie = TCPc->TCPconnexion("192.168.64.124", 502);
+				i = 1;
+			}
+
+			} while (i != 0);
+
+		}
+
+
+	} while (TCPser == true);
+}
