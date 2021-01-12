@@ -15,7 +15,8 @@
             $this->_bdd = $bdd;
         }
 
-        public function signUser(){ //Fonction entrant un utilisateur dans la base de donnée
+        //Fonction entrant un utilisateur dans la base de donnée
+        public function signUser(){ 
             $reqUser = $this->_bdd->query("INSERT INTO `user` (`id`, `login`, `mdp`, `prenom`, `nom`) VALUES (NULL, '".$this->_mail."', '".$this->_password."', '".$this->_prenom."', '".$this->_nom."')");
             if(!empty($this->_mail) && !empty($this->_password) && !empty($this->_nom) && !empty($this->_prenom)){
                 if(filter_var($this->_mail, FILTER_VALIDATE_EMAIL)){

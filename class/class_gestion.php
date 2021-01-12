@@ -11,19 +11,22 @@ class gestion
         $userInfo = $reqUser->fetch();
     }
 
-    public function getUserData(){ //Fonction retournant les données de l'utilisateur connecté
+    //Fonction retournant les données de l'utilisateur connecté
+    public function getUserData(){ 
         $reqUser = $this->_bdd->query("SELECT * FROM user WHERE id = ".$this->_id);
         $userInfo = $reqUser->fetch();
         return $userInfo;
     }
-
-    public function logout(){ //Fonction déconnectant l'utilisateur connecté
+    
+    //Fonction déconnectant l'utilisateur connecté
+    public function logout(){ 
         session_destroy();
         header('Location:index.php');
     }
 
+    // fonction qui fère la liaison TCP
     public function submitTemp($temp){
-        $adress = '192.168.64.89';
+        $adress = '192.168.65.25';
         $port = '203';
         $buf = $temp;
 

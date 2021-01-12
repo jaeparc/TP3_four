@@ -13,7 +13,8 @@ class login
         $this->_bdd = $bdd;
     }
 
-    public function verifUser() //Fonction testant l'existence d'un utilisateur correspondant aux données rentrées dans le formulaire et retournant un message d'erreur si erreur il y a 
+    //Fonction testant l'existence d'un utilisateur correspondant aux données rentrées dans le formulaire et retournant un message d'erreur si erreur il y a 
+    public function verifUser() 
     {
         if (!empty($this->_password) && !empty($this->_mail)) {
             if(filter_var($this->_mail, FILTER_VALIDATE_EMAIL)){
