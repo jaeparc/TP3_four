@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/01/06 08:53:03.000.942,=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
+    <Transaction>2021/01/06 08:53:04.000.051,=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\File1.cpp</Transaction>
+    <Transaction>2021/01/06 08:53:23.000.707,=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+    <Transaction>2021/01/06 08:53:32.000.147,C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\main.cpp=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\File1.cpp</Transaction>
+    <Transaction>2021/01/06 08:53:45.000.048,C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\TCPserver.cpp=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+    <Transaction>2021/01/06 08:53:45.000.048,C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\TCPserver.h=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\Unit1.h</Transaction>
+    <Transaction>2021/01/06 09:00:46.000.332,=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+    <Transaction>2021/01/06 09:00:58.000.516,C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\TCPclient.h=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\Unit1.h</Transaction>
+    <Transaction>2021/01/06 09:00:58.000.516,C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\TCPclient.cpp=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+    <Transaction>2021/01/06 09:03:25.000.384,C:\Users\ClémentS\Desktop\Four\TCPserver.h=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\TCPclient.h</Transaction>
+    <Transaction>2021/01/06 09:03:25.000.384,C:\Users\ClémentS\Desktop\Four\TCPserver.cpp=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\TCPclient.cpp</Transaction>
+    <Transaction>2021/01/06 09:03:26.000.570,C:\Users\ClémentS\Desktop\Four\main.cpp=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\main.cpp</Transaction>
+    <Transaction>2021/01/06 09:03:34.000.448,C:\Users\ClémentS\Desktop\Four\TCPserver.cpp=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\TCPserver.cpp</Transaction>
+    <Transaction>2021/01/06 09:03:34.000.448,C:\Users\ClémentS\Desktop\Four\TCPserver.h=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\TCPserver.h</Transaction>
+    <Transaction>2021/01/06 09:03:36.000.788,C:\Users\ClémentS\Desktop\Four\Project1PCH1.h=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
+    <Transaction>2021/01/06 09:03:37.000.505,C:\Users\ClémentS\Desktop\Four\Project1.cbproj=C:\Users\ClémentS\Documents\Embarcadero\Studio\Projets\Project1.cbproj</Transaction>
+    <Transaction>2021/01/06 09:04:09.000.361,=C:\Users\ClémentS\Desktop\Four\Unit1.cpp</Transaction>
+    <Transaction>2021/01/06 09:04:21.000.778,C:\Users\ClémentS\Desktop\Four\TCPclient.cpp=C:\Users\ClémentS\Desktop\Four\Unit1.cpp</Transaction>
+    <Transaction>2021/01/06 09:04:21.000.778,C:\Users\ClémentS\Desktop\Four\TCPclient.h=C:\Users\ClémentS\Desktop\Four\Unit1.h</Transaction>
+    <Transaction>2021/01/06 09:20:04.000.068,C:\Users\ClémentS\Desktop\Four\TCPclient.cpp=</Transaction>
+  </Transactions>
+</BorlandProject>

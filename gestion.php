@@ -2,10 +2,12 @@
 session_start();
 require('class/class_gestion.php');
 require('class/bdd.php');
-if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) { //Test si l'utilisateur est connecté
+//Test si l'utilisateur est connecté
+if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
     $gestion = new gestion($_SESSION['id_logged'], $bdd);
     $userInfo = $gestion->getUserData();
-    if (isset($_POST['logout'])) { //Actions à réaliser si l'utilisateur a cliquer sur le bouton "Déconnexion"
+    //Actions à réaliser si l'utilisateur a cliquer sur le bouton "Déconnexion"
+    if (isset($_POST['logout'])) { 
         $gestion->logout();
     }
     if (isset($_POST['subTemp']) && isset($_POST['temperatureDesired'])) { //Actions à réaliser si l'utilisateur vient de rentrer une température pour le four

@@ -6,16 +6,16 @@ class TCPserver
 {
 
 private:
-	SOCKET sock;
+        SOCKET sock;
 	SOCKET csock;
 	char *buffer;
 public:
 	TCPserver();
-	bool TCPconnexion(int PORT);
-	bool TCPWaitConnexion();
-	bool TCPsend(char *buffer);
-	bool TCPrecv(char *buffer, int len);
-	bool TCPclose();
+        bool TCPconnexion(int PORT); // connexion TCP sur le port
+        bool TCPWaitConnexion(); // attente de connexion
+        bool TCPsend(char *buffer); // envoie du contenue du buffer
+        bool TCPrecv(char *buffer, int len); // recevoir et lecture du buffer
+        bool TCPclose(); // fermer la connexion TCP
 };
 
 

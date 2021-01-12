@@ -23,7 +23,7 @@ class gestion
     }
 
     public function submitTemp($temp){
-        $adress = '192.168.65.25';
+        $adress = '192.168.64.89';
         $port = '203';
         $buf = $temp;
 
